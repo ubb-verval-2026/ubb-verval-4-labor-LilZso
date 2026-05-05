@@ -142,10 +142,10 @@ public class PersonPageTests
 
         // Assert
         var validationSummary = wait.Until(ExpectedConditions.ElementExists(By.CssSelector(".validation-errors")));
-        validationSummary.Text.Should().Contain("The specified percentag should be between -10 and infinity.");
+        validationSummary.Text.Should().Contain("The specified percentag should be strictly greater than -10.");
 
         var validationMessage = wait.Until(ExpectedConditions.ElementExists(By.CssSelector(".validation-message")));
-        validationMessage.Text.Should().Contain("The specified percentag should be between -10 and infinity.");
+        validationMessage.Text.Should().Contain("The specified percentag should be strictly greater than -10.");
     }
 
     private bool IsElementPresent(By by)
